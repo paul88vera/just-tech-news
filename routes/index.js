@@ -1,10 +1,8 @@
 const router = require('express').Router();
 
-const userRoutes = require('./api/user-routes');
-const postRoutes = require('./api/post-routes');
+const apiRoutes = require('./api');
 
-router.use('/api/users', userRoutes);
-router.use('/api/posts', postRoutes);
+router.use('/api', apiRoutes);
 
 router.use((req, res) => {
   res.status(404).end();
